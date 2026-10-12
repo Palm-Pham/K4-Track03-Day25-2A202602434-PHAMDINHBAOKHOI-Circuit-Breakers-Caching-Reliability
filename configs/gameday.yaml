@@ -53,7 +53,7 @@ client:
 # wrong_answers_by_reason, tune each value and justify it in report section 8.
 # ----------------------------------------------------------------------------
 cache:
-  similarity_threshold: 0.80
-  ttl_s: 600
-  max_stale_s: 0
+  similarity_threshold: 0.94   # reject near-but-different FAQ intents
+  ttl_s: 30                   # bound exposure to unannounced source changes
+  max_stale_s: 300            # stale only after provider failure; covers C1 outage
   max_entries: 500
